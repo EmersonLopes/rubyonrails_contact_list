@@ -1,0 +1,41 @@
+  [1m[35m (26.1ms)[0m  [1m[35mCREATE DATABASE "contact_list_development" ENCODING = 'unicode'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE "contact_list_development" ENCODING = 'unicode'[0m
+  [1m[35m (29.0ms)[0m  [1m[35mCREATE DATABASE "contact_list_development" ENCODING = 'unicode'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE "contact_list_development" ENCODING = 'utf8'[0m
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE DATABASE "contact_list_development" ENCODING = 'utf8'[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE DATABASE "contact_list_development" ENCODING = 'utf8'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE "contact_list_development" ENCODING = 'utf8'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE "contact_list_development" ENCODING = 'utf8'[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE DATABASE "contact_list_development" ENCODING = 'utf8'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE "contact_list_development" ENCODING = 'utf8'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE "contact_list_development" ENCODING = 'utf8'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE "contact_list_development" ENCODING = 'UTF-8'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "contact_list_development" ENCODING = 'LATIN1'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "contact_list_test" ENCODING = 'utf8'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE "contact_list_development" ENCODING = 'UTF-8'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE "contact_list_development" ENCODING = 'UTF-8'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE "contact_list_development" ENCODING = 'unicode' LC_COLLATE = 'en_US.UTF-8'[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE DATABASE "contact_list_development" ENCODING = 'unicode' LC_COLLATE = 'LATIN1'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE "contact_list_development" ENCODING = 'unicode' LC_COLLATE = 'en_US.UTF-8'[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE DATABASE "contact_list_development" ENCODING = 'utf8'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE "contact_list_development" ENCODING = 'utf8'[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE DATABASE "contact_list_test" ENCODING = 'utf8'[0m
+Started GET "/" for 127.0.0.1 at 2023-11-15 16:34:17 -0300
+  [1m[35m (120.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (29.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 232)
+  Rendered layout layouts/application.html.erb (Duration: 1033.1ms | Allocations: 99119)
+Completed 200 OK in 1078ms (Views: 1043.9ms | ActiveRecord: 0.0ms | Allocations: 108802)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-15 16:34:46 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /var/lib/gems/3.0.0/gems/railties-7.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /var/lib/gems/3.0.0/gems/railties-7.1.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.5ms | Allocations: 492)
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.0ms | Allocations: 1666)
+
+
