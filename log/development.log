@@ -130,3 +130,39 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 39ms (Views: 6.8ms | ActiveRecord: 0.0ms | Allocations: 4912)
 
 
+Started GET "/" for 127.0.0.1 at 2023-11-18 12:00:39 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (5.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/emerson/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-7.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/emerson/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-7.1.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 4.6ms | Allocations: 376)
+Completed 200 OK in 177ms (Views: 47.8ms | ActiveRecord: 0.0ms | Allocations: 7872)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-18 13:38:54 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (25.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/emerson/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-7.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/emerson/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-7.1.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 19.2ms | Allocations: 376)
+Completed 200 OK in 211ms (Views: 28.7ms | ActiveRecord: 0.0ms | Allocations: 4266)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-18 19:04:47 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (17.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 211)
+  Rendered layout layouts/application.html.erb (Duration: 952.5ms | Allocations: 96909)
+Completed 200 OK in 1022ms (Views: 976.0ms | ActiveRecord: 0.0ms | Allocations: 100976)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-18 19:24:26 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 211)
+  Rendered layout layouts/application.html.erb (Duration: 2816.3ms | Allocations: 156100)
+Completed 200 OK in 3084ms (Views: 2842.8ms | ActiveRecord: 0.0ms | Allocations: 160171)
+
+
