@@ -166,3 +166,102 @@ Processing by StaticPagesController#index as HTML
 Completed 200 OK in 3084ms (Views: 2842.8ms | ActiveRecord: 0.0ms | Allocations: 160171)
 
 
+Started GET "/" for 127.0.0.1 at 2023-11-19 10:39:27 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (15.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 211)
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | Allocations: 337)
+  Rendered layout layouts/application.html.erb (Duration: 1016.8ms | Allocations: 56431)
+Completed 200 OK in 1101ms (Views: 1022.6ms | ActiveRecord: 0.0ms | Allocations: 60501)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-19 10:41:27 -0300
+Processing by StaticPagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 106)
+  Rendered layouts/_header.html.erb (Duration: 6.4ms | Allocations: 243)
+  Rendered layout layouts/application.html.erb (Duration: 68.9ms | Allocations: 18892)
+Completed 200 OK in 71ms (Views: 70.3ms | ActiveRecord: 0.0ms | Allocations: 19803)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-19 10:42:11 -0300
+Processing by StaticPagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 106)
+  Rendered layouts/_header.html.erb (Duration: 0.5ms | Allocations: 241)
+  Rendered layouts/_footer.html.erb (Duration: 244.2ms | Allocations: 2301)
+  Rendered layout layouts/application.html.erb (Duration: 280.1ms | Allocations: 21129)
+Completed 500 Internal Server Error in 284ms (ActiveRecord: 0.0ms | Allocations: 22033)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `sobre_path' for #<ActionView::Base:0x00000000011b98>):
+     6:   <nav>
+     7:     <ul>
+     8:       <li>
+     9:         <%= link_to 'Sobre', sobre_path %>
+    10:       </li>
+    11:       <li>
+    12:         <%= link_to 'Contato', contato_path %>
+  
+app/views/layouts/_footer.html.erb:9
+app/views/layouts/application.html.erb:20
+Started GET "/" for 127.0.0.1 at 2023-11-19 10:43:40 -0300
+Processing by StaticPagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 106)
+  Rendered layouts/_header.html.erb (Duration: 9.7ms | Allocations: 241)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 199)
+  Rendered layout layouts/application.html.erb (Duration: 62.8ms | Allocations: 19122)
+Completed 200 OK in 65ms (Views: 64.4ms | ActiveRecord: 0.0ms | Allocations: 20031)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-19 10:46:40 -0300
+Processing by StaticPagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 8)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 59)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered layout layouts/application.html.erb (Duration: 1719.6ms | Allocations: 43552)
+Completed 200 OK in 1743ms (Views: 1720.7ms | ActiveRecord: 0.0ms | Allocations: 43803)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-19 10:49:21 -0300
+Processing by StaticPagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 8)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 59)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 38)
+  Rendered layout layouts/application.html.erb (Duration: 638.8ms | Allocations: 42985)
+Completed 200 OK in 652ms (Views: 651.8ms | ActiveRecord: 0.0ms | Allocations: 43231)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-19 10:49:43 -0300
+Processing by StaticPagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 8)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 59)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered layout layouts/application.html.erb (Duration: 657.1ms | Allocations: 43131)
+Completed 200 OK in 700ms (Views: 699.4ms | ActiveRecord: 0.0ms | Allocations: 43381)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-19 10:50:18 -0300
+Processing by StaticPagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 110)
+  Rendered layouts/_header.html.erb (Duration: 10.8ms | Allocations: 241)
+  Rendered layouts/_footer.html.erb (Duration: 1.4ms | Allocations: 199)
+  Rendered layout layouts/application.html.erb (Duration: 265.9ms | Allocations: 19219)
+Completed 200 OK in 344ms (Views: 268.2ms | ActiveRecord: 0.0ms | Allocations: 20128)
+
+
