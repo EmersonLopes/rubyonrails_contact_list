@@ -936,3 +936,165 @@ Processing by StaticPagesController#index as */*
 Completed 200 OK in 162ms (Views: 161.9ms | ActiveRecord: 0.0ms | Allocations: 13750)
 
 
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4911959984300825505)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (31.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (17.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (22.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2023-11-20 23:28:41.621875', '2023-11-20 23:28:41.621878') RETURNING "key"[0m
+Migrating to CreateContacts (20231120225635)
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (146.7ms)[0m  [1m[35mCREATE TABLE "contacts" ("id" bigserial primary key, "name" character varying, "phone" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231120225635') RETURNING "version"[0m
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4911959984300825505)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-11-20 20:31:40 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (7.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 296)
+  Rendered layouts/_header.html.erb (Duration: 0.5ms | Allocations: 320)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 226)
+  Rendered layout layouts/application.html.erb (Duration: 1177.7ms | Allocations: 57259)
+Completed 200 OK in 1309ms (Views: 1188.3ms | ActiveRecord: 0.0ms | Allocations: 61318)
+
+
+Started GET "/contact" for 127.0.0.1 at 2023-11-20 20:31:46 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/contact"):
+  
+Started GET "/contacts" for 127.0.0.1 at 2023-11-20 20:31:52 -0300
+Processing by ContactsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/index.html.erb within layouts/application
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  ↳ app/views/contacts/index.html.erb:6
+  Rendered contacts/index.html.erb within layouts/application (Duration: 23.0ms | Allocations: 3838)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 46)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered layout layouts/application.html.erb (Duration: 41.3ms | Allocations: 10236)
+Completed 200 OK in 1324ms (Views: 39.5ms | ActiveRecord: 2.9ms | Allocations: 19754)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2023-11-20 20:32:25 -0300
+Processing by ContactsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/index.html.erb within layouts/application
+  [1m[36mContact Load (19.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  ↳ app/views/contacts/index.html.erb:6
+  Rendered contacts/index.html.erb within layouts/application (Duration: 32.3ms | Allocations: 522)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 46)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered layout layouts/application.html.erb (Duration: 97.0ms | Allocations: 6766)
+Completed 200 OK in 129ms (Views: 109.4ms | ActiveRecord: 19.4ms | Allocations: 7026)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2023-11-20 20:44:08 -0300
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/_form.html.erb (Duration: 18.4ms | Allocations: 2132)
+  Rendered contacts/new.html.erb within layouts/application (Duration: 31.8ms | Allocations: 2416)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 45)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 54)
+  Rendered layout layouts/application.html.erb (Duration: 58.9ms | Allocations: 8797)
+Completed 200 OK in 213ms (Views: 60.5ms | ActiveRecord: 33.3ms | Allocations: 24457)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2023-11-20 20:44:20 -0300
+Processing by ContactsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "contact"=>{"name"=>"Emerson", "phone"=>"85987123456"}, "commit"=>"Create Contact"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/contacts_controller.rb:27:in `block in create'
+  [1m[36mContact Create (19.9ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Emerson"], ["phone", "85987123456"], ["created_at", "2023-11-20 23:44:20.495629"], ["updated_at", "2023-11-20 23:44:20.495629"]]
+  ↳ app/controllers/contacts_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/contacts_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3000/contacts/1
+Completed 302 Found in 34ms (ActiveRecord: 23.7ms | Allocations: 3483)
+
+
+Started GET "/contacts/1" for 127.0.0.1 at 2023-11-20 20:44:20 -0300
+Processing by ContactsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:63:in `set_contact'
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/show.html.erb within layouts/application
+  Rendered contacts/_contact.html.erb (Duration: 0.5ms | Allocations: 183)
+  Rendered contacts/show.html.erb within layouts/application (Duration: 16.1ms | Allocations: 1229)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 45)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered layout layouts/application.html.erb (Duration: 47.5ms | Allocations: 7458)
+Completed 200 OK in 105ms (Views: 48.3ms | ActiveRecord: 0.3ms | Allocations: 10542)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2023-11-20 20:44:24 -0300
+Processing by ContactsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/index.html.erb within layouts/application
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  ↳ app/views/contacts/index.html.erb:6
+  Rendered contacts/_contact.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered contacts/index.html.erb within layouts/application (Duration: 15.8ms | Allocations: 793)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 45)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered layout layouts/application.html.erb (Duration: 46.7ms | Allocations: 7026)
+Completed 200 OK in 48ms (Views: 47.6ms | ActiveRecord: 0.2ms | Allocations: 7291)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2023-11-20 20:44:28 -0300
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/_form.html.erb (Duration: 1.4ms | Allocations: 739)
+  Rendered contacts/new.html.erb within layouts/application (Duration: 8.9ms | Allocations: 818)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 45)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered layout layouts/application.html.erb (Duration: 30.8ms | Allocations: 7050)
+Completed 200 OK in 32ms (Views: 31.9ms | ActiveRecord: 0.0ms | Allocations: 7315)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2023-11-20 20:44:38 -0300
+Processing by ContactsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "contact"=>{"name"=>"Maria", "phone"=>"8598765432"}, "commit"=>"Create Contact"}
+  [1m[36mTRANSACTION (14.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/contacts_controller.rb:27:in `block in create'
+  [1m[36mContact Create (16.5ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Maria"], ["phone", "8598765432"], ["created_at", "2023-11-20 23:44:38.849297"], ["updated_at", "2023-11-20 23:44:38.849297"]]
+  ↳ app/controllers/contacts_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (356.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/contacts_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3000/contacts/2
+Completed 302 Found in 393ms (ActiveRecord: 387.3ms | Allocations: 2009)
+
+
+Started GET "/contacts/2" for 127.0.0.1 at 2023-11-20 20:44:39 -0300
+Processing by ContactsController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:63:in `set_contact'
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/show.html.erb within layouts/application
+  Rendered contacts/_contact.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered contacts/show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 455)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 45)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered layout layouts/application.html.erb (Duration: 34.1ms | Allocations: 6683)
+Completed 200 OK in 46ms (Views: 42.4ms | ActiveRecord: 0.2ms | Allocations: 7354)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2023-11-20 20:44:41 -0300
+Processing by ContactsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/index.html.erb within layouts/application
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  ↳ app/views/contacts/index.html.erb:6
+  Rendered contacts/_contact.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered contacts/_contact.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered contacts/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 879)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 45)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | Allocations: 7112)
+Completed 200 OK in 35ms (Views: 34.7ms | ActiveRecord: 0.2ms | Allocations: 7371)
+
+
