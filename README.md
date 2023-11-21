@@ -31,6 +31,9 @@ These are the commands used in this project
 # Create a mvc of the entity Contact with the properties name and phoe
 rails generate scaffold Contact name:string phone:string
 
+# Create a model of the entity User with the properties emails, name and password_digest
+rails generate model User email:string name:string password_digest:string
+
 # Run project
 rails server
 # or
@@ -44,5 +47,12 @@ rails db:migrate
 
 # List routes used in this project
 rails routes
+
+# Create a new user using the rails console
+rails console
+user = User.new
+user.name = "Joao"
+user.email = "joao@gamail.com"
+user.save
 
 ```
