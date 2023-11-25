@@ -1111,3 +1111,212 @@ Migrating to CreateUsers (20231121215600)
   [1m[36mTRANSACTION (8.6ms)[0m  [1m[35mBEGIN[0m
   [1m[36mUser Create (13.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "name", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "joao@gamail.com"], ["name", "Joao"], ["password_digest", "[FILTERED]"], ["created_at", "2023-11-21 22:07:14.544228"], ["updated_at", "2023-11-21 22:07:14.544228"]]
   [1m[36mTRANSACTION (51.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/contacts" for 127.0.0.1 at 2023-11-25 09:44:33 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (62.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ContactsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/index.html.erb within layouts/application
+  [1m[36mContact Load (27.9ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  ↳ app/views/contacts/index.html.erb:6
+  Rendered contacts/_contact.html.erb (Duration: 1.9ms | Allocations: 219)
+  Rendered contacts/_contact.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered contacts/index.html.erb within layouts/application (Duration: 249.5ms | Allocations: 14700)
+  Rendered layouts/_header.html.erb (Duration: 1.2ms | Allocations: 230)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 223)
+  Rendered layout layouts/application.html.erb (Duration: 824.5ms | Allocations: 70614)
+Completed 200 OK in 936ms (Views: 748.5ms | ActiveRecord: 104.6ms | Allocations: 80519)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-11-25 09:44:47 -0300
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 89)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 65)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 54)
+  Rendered layout layouts/application.html.erb (Duration: 69.7ms | Allocations: 6680)
+Completed 200 OK in 78ms (Views: 77.4ms | ActiveRecord: 0.0ms | Allocations: 7170)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-11-25 10:01:07 -0300
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 113ms (ActiveRecord: 0.0ms | Allocations: 1047)
+
+
+  
+LoadError (cannot load such file -- bcrypt):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:4:in `new'
+Started GET "/contacts" for 127.0.0.1 at 2023-11-25 10:14:40 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (17.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ContactsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/index.html.erb within layouts/application
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  ↳ app/views/contacts/index.html.erb:6
+  Rendered contacts/_contact.html.erb (Duration: 0.4ms | Allocations: 219)
+  Rendered contacts/_contact.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered contacts/index.html.erb within layouts/application (Duration: 114.5ms | Allocations: 14682)
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 230)
+  Rendered layouts/_footer.html.erb (Duration: 0.9ms | Allocations: 223)
+  Rendered layout layouts/application.html.erb (Duration: 615.4ms | Allocations: 62525)
+Completed 200 OK in 740ms (Views: 633.8ms | ActiveRecord: 6.1ms | Allocations: 72430)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-11-25 10:14:51 -0300
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1947)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 2038)
+Completed 500 Internal Server Error in 74ms (ActiveRecord: 26.7ms | Allocations: 7949)
+
+
+  
+ActionView::Template::Error (Missing partial users/_fields, application/_fields with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/emerson/projects/rails/rubyonrails_contact_list/app/views"
+  * "/home/emerson/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/turbo-rails-1.5.0/app/views"
+  * "/home/emerson/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/actiontext-7.1.2/app/views"
+  * "/home/emerson/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/actionmailbox-7.1.2/app/views"
+):
+     5: 
+     6:   <div class="col-md-6 col-md-offset-3 col-xs-12">
+     7:     <%= form_for @user do |f| %>
+     8:       <%= render 'fields', f: f %>
+     9:       <%= f.submit 'Cadastrar', class: 'btn btn-primary' %>
+    10:     <% end %>
+    11:   </div>
+  
+app/views/users/new.html.erb:8
+app/views/users/new.html.erb:7
+Started GET "/users/new" for 127.0.0.1 at 2023-11-25 10:15:01 -0300
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 1160)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 1255)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.0ms | Allocations: 1501)
+
+
+  
+ActionView::Template::Error (Missing partial users/_fields, application/_fields with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/emerson/projects/rails/rubyonrails_contact_list/app/views"
+  * "/home/emerson/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/turbo-rails-1.5.0/app/views"
+  * "/home/emerson/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/actiontext-7.1.2/app/views"
+  * "/home/emerson/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/actionmailbox-7.1.2/app/views"
+):
+     5: 
+     6:   <div class="col-md-6 col-md-offset-3 col-xs-12">
+     7:     <%= form_for @user do |f| %>
+     8:       <%= render 'fields', f: f %>
+     9:       <%= f.submit 'Cadastrar', class: 'btn btn-primary' %>
+    10:     <% end %>
+    11:   </div>
+  
+app/views/users/new.html.erb:8
+app/views/users/new.html.erb:7
+Started GET "/users/new" for 127.0.0.1 at 2023-11-25 10:17:13 -0300
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.3ms | Allocations: 101)
+  Rendered layouts/_header.html.erb (Duration: 0.5ms | Allocations: 241)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 215)
+  Rendered layout layouts/application.html.erb (Duration: 52.0ms | Allocations: 19448)
+Completed 200 OK in 72ms (Views: 58.1ms | ActiveRecord: 2.1ms | Allocations: 24140)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-11-25 10:20:31 -0300
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 1151)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | Allocations: 1251)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.9ms | Allocations: 5890)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="row">
+  <div class="col-xs-12">
+    <h1>Cadastre-se</h1>
+  </div>
+
+  <div class="col-md-6 col-md-offset-3 col-xs-12">
+    <%= form_for @user do |f| %>
+
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class="form-control" %>
+      </div>
+
+    <% end %>
+  </div>
+</div>
+):
+1:    <div class="row">
+2:      <div class="col-xs-12">
+3:        <h1>Cadastre-se</h1>
+4:      </div>
+5:    
+6:      <div class="col-md-6 col-md-offset-3 col-xs-12">
+7:        <%= form_for @user do |f| %>
+8:    
+9:          <div class="form-group">
+10:            <%= f.label :name %>
+11:            <%= f.text_field :name, class="form-control" %>
+12:          </div>
+13:    
+14:        <% end %>
+15:      </div>
+16:    </div>
+  
+app/views/users/new.html.erb:11: syntax error, unexpected '='
+Started GET "/users/new" for 127.0.0.1 at 2023-11-25 10:21:24 -0300
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 254.4ms | Allocations: 1342)
+  Rendered layouts/_header.html.erb (Duration: 12.9ms | Allocations: 213)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 215)
+  Rendered layout layouts/application.html.erb (Duration: 305.1ms | Allocations: 20430)
+Completed 200 OK in 328ms (Views: 319.8ms | ActiveRecord: 3.3ms | Allocations: 25124)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-11-25 10:23:55 -0300
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 99.8ms | Allocations: 2508)
+  Rendered layout layouts/application.html.erb (Duration: 100.9ms | Allocations: 2600)
+Completed 500 Internal Server Error in 112ms (ActiveRecord: 1.8ms | Allocations: 7231)
+
+
+  
+ActionView::Template::Error (undefined method `password_confirmation_field' for #<ActionView::Helpers::FormBuilder:0x00007f2cba74bec0 @nested_child_index={}, @options={:allow_method_names_outside_object=>false, :skip_default_ids=>false, :html=>{:class=>"new_user", :id=>"new_user"}, :local=>true}, @template=#<ActionView::Base:0x0000000001bf30>, @object=#<User id: nil, email: "", name: "", password_digest: [FILTERED], created_at: nil, updated_at: nil>, @object_name="user", @default_options={:skip_default_ids=>false, :allow_method_names_outside_object=>false}, @default_html_options={}, @multipart=nil, @index=nil>):
+    23: 
+    24:       <div class="form-group">
+    25:         <%= f.label :password_confirmation %>
+    26:         <%= f.password_confirmation_field :password_confirmation, class: 'form-control' %>
+    27:       </div>
+    28: 
+    29:       <%= f.submit 'Cadastrar', class: 'btn btn-primary' %>
+  
+app/views/users/new.html.erb:26
+app/views/users/new.html.erb:7
+Started GET "/users/new" for 127.0.0.1 at 2023-11-25 10:24:54 -0300
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1444)
+  Rendered layouts/_header.html.erb (Duration: 15.1ms | Allocations: 215)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 215)
+  Rendered layout layouts/application.html.erb (Duration: 61.1ms | Allocations: 20544)
+Completed 200 OK in 82ms (Views: 76.0ms | ActiveRecord: 1.8ms | Allocations: 25231)
+
+

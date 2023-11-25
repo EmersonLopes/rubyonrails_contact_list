@@ -28,11 +28,17 @@ Things you may want to cover:
 These are the commands used in this project
 
 ```bash
+# install news gems
+bundle install
+
 # Create a mvc of the entity Contact with the properties name and phoe
 rails generate scaffold Contact name:string phone:string
 
 # Create a model of the entity User with the properties emails, name and password_digest
 rails generate model User email:string name:string password_digest:string
+
+# Create a controller of the entity User
+rails g controller Users
 
 # Run project
 rails server
